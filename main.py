@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget,
-    QVBoxLayout, QLabel, QPushButton, QListWidget
+    QVBoxLayout, QLabel, QPushButton, QListWidget, QHBoxLayout
 )
 from PySide6.QtCore import Qt
 
@@ -9,7 +9,14 @@ from PySide6.QtCore import Qt
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PySide Quick Start")
+        self.setWindowTitle("AWS Daemon")
+
+        vertical_layout = QVBoxLayout()
+        horizontal_layout = QHBoxLayout()
+        vertical_layout.addLayout(horizontal_layout)
+        self.setLayout(vertical_layout)
+
+
 
         # ---- central widget & layout
         central = QWidget(self)
