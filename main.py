@@ -1,9 +1,11 @@
 import sys
+
 from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget,
-    QVBoxLayout, QLabel, QPushButton, QListWidget, QHBoxLayout
+    QApplication, QMainWindow, QVBoxLayout
 )
-from PySide6.QtCore import Qt
+
+from services.services_widget import ServicesWidget
+from session.session_widget import SessionWidget
 
 
 class MainWindow(QMainWindow):
@@ -11,39 +13,14 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("AWS Daemon")
 
+        session_widget = SessionWidget()
+        services_widget = ServicesWidget()
+
         vertical_layout = QVBoxLayout()
-        horizontal_layout = QHBoxLayout()
-        vertical_layout.addLayout(horizontal_layout)
+        vertical_layout.addWidget(session_widget)
+        vertical_layout.addWidget(services_widget)
+
         self.setLayout(vertical_layout)
-
-
-
-        # ---- central widget & layout
-        central = QWidget(self)
-        layout = QVBoxLayout()
-        central.setLayout(layout)
-        self.setCentralWidget(central)
-
-        # ---- UI elements
-        self.label = QLabel("Hello, world!")
-        self.label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-
-        self.button = QPushButton("Add item")
-        self.list_widget = QListWidget()
-
-        layout.addWidget(self.label)
-        layout.addWidget(self.button)
-        layout.addWidget(self.list_widget)
-
-        # simple counter so items are unique
-        self._count = 0
-
-        # ---- connect signals
-        self.button.clicked.connect(self.add_item)
-
-    def add_item(self):
-        self._count += 1
-        self.list_widget.addItem(f"Item {self._count}")
 
 
 def main():
