@@ -15,21 +15,21 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="button_1">
      <property name="text">
       <string>1</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="button_2">
      <property name="text">
       <string>2</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="button_3">
      <property name="text">
       <string>3</string>
      </property>
