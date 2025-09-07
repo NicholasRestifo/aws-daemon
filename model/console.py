@@ -1,7 +1,7 @@
 import subprocess
 
 
-class ConsoleModel:
+class Console:
     def __init__(self):
         self.out_subscribers = []
 

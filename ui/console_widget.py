@@ -1,11 +1,11 @@
-from model.console_model import ConsoleModel
+from model.console import Console
 from ui.ui_file_widget import UiFileWidget
 
 
 class ConsoleWidget(UiFileWidget):
     def __init__(self, ui_path, parent=None):
         super().__init__(ui_path, parent)
-        self.model = ConsoleModel()
+        self.model = Console()
         self.console_in_widget.model = self.model
         self.model.subscribe_out_text(lambda out_text: self.write(out_text)) # can just pass self.write?
 
