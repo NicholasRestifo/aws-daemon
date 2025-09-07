@@ -4,8 +4,7 @@ from PyQt6.QtWidgets import QTextEdit
 
 
 class ConsoleInputWidget(QTextEdit):
-    # TODO some kind of widget subclass with a key press/release signal...
-    def __init__(self, parent=...):
+    def __init__(self, parent):
         super().__init__(parent)
         self.model = None
         self.document().documentLayout().documentSizeChanged.connect(self.adjust_height)
@@ -14,9 +13,16 @@ class ConsoleInputWidget(QTextEdit):
         # Adding a small margin to prevent scrollbars appearing prematurely
         self.setMaximumHeight(int(size.height()) + int(self.document().documentMargin() * 2))
 
+    def keyPressEvent(self, event: QKeyEvent):
+        if event.key() == Qt.Key.Key_Return:
+            return
+
+        super().keyPressEvent(event)
+
     def keyReleaseEvent(self, event: QKeyEvent):
         if event.key() == Qt.Key.Key_Return:
             self.return_pressed()
+            return
 
         super().keyPressEvent(event)
 

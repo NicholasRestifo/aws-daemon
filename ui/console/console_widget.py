@@ -1,11 +1,14 @@
-from model.console import Console
-from ui.ui_file_widget import UiFileWidget
+from PyQt6 import uic
+from PyQt6.QtWidgets import QWidget
+
+UI_FILE_PATH = "ui//console/console_form.ui"
 
 
-class ConsoleWidget(UiFileWidget):
-    def __init__(self, ui_path, parent=None):
-        super().__init__(ui_path, parent)
-        self.model = Console()
+class ConsoleWidget(QWidget):
+    def __init__(self, console, parent):
+        super().__init__(parent)
+        uic.loadUi(UI_FILE_PATH, self)
+        self.model = console
         self.console_in_widget.model = self.model
         self.model.subscribe_out_text(lambda out_text: self.write(out_text)) # can just pass self.write?
 

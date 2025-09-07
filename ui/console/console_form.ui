@@ -30,7 +30,7 @@
   <customwidget>
    <class>ConsoleInputWidget</class>
    <extends>QTextEdit</extends>
-   <header>ui.console_input_widget</header>
+   <header>ui.console.console_input_widget</header>
   </customwidget>
  </customwidgets>
  <resources/>
