@@ -1,17 +1,9 @@
-from PyQt6.QtCore import QProcess
-
-
-def process_data_to_text(data):
-    return data.data().decode('utf-8').strip()
+import subprocess
 
 
 class ConsoleModel:
     def __init__(self):
         self.out_subscribers = []
-        self.process = QProcess()
-
-        self.process.readyReadStandardOutput.connect(self._print_process_output)
-        self.process.readyReadStandardError.connect(self._print_process_output)
 
     def subscribe_out_text(self, out_text_consumer):
         self.out_subscribers.append(out_text_consumer)
@@ -20,14 +12,16 @@ class ConsoleModel:
         for subscriber in self.out_subscribers:
             subscriber(out_text)
 
-    def _print_process_output(self):
-        self._post_out_text(
-            process_data_to_text(
-                self.process.readAllStandardOutput()))
-        self._post_out_text(
-            process_data_to_text(
-                self.process.readAllStandardError()))
+    def handle_console_input(self, console_input):
+        self._post_out_text(console_input)
+        self._run_process(console_input)
 
-    def input_text(self, input_text):
-        self._post_out_text(input_text)
-        self.process.start(input_text)
+    def _run_process(self, console_input):
+        completed_process = subprocess.run(
+            console_input,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            encoding='utf-8')
+        self._post_out_text(str(completed_process.stdout).strip())
+        self._post_out_text(str(completed_process.stderr).strip())
