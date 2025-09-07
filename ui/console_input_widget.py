@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QTextEdit
 
 
 class ConsoleInputWidget(QTextEdit):
+    # TODO some kind of widget subclass with a key press/release signal...
     def __init__(self, parent=...):
         super().__init__(parent)
         self.model = None
