@@ -10,6 +10,9 @@ class ConsoleWidget(UiFileWidget):
         self.model.subscribe_out_text(lambda out_text: self.write(out_text)) # can just pass self.write?
 
     def write(self, text):
+        if len(text) == 0:
+            return
+
         self.console_out_widget.append(text)
         self.scroll_to_bottom()
 
