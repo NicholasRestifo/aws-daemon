@@ -15,7 +15,11 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTextEdit" name="console_out_widget"/>
+    <widget class="QTextEdit" name="console_out_widget">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="ConsoleInputWidget" name="console_in_widget"/>
