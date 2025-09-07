@@ -16,6 +16,6 @@ class ConsoleInputWidget(QTextEdit):
         super().keyPressEvent(event)
 
     def return_pressed(self):
-        input_text = self.toPlainText()[:-1]
+        input_text = self.toPlainText().strip()
         self.clear()
         self.model.handle_console_input(input_text)
