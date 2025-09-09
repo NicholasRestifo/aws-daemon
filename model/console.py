@@ -1,16 +1,14 @@
 import subprocess
 
+from model.notification.emitter import Emitter
+
 
 class Console:
     def __init__(self):
-        self.out_subscribers = []
-
-    def subscribe_out_text(self, out_text_consumer):
-        self.out_subscribers.append(out_text_consumer)
+        self.out_text_emitter = Emitter()
 
     def _post_out_text(self, out_text):
-        for subscriber in self.out_subscribers:
-            subscriber(out_text)
+        self.out_text_emitter.emit(out_text)
 
     def handle_console_input(self, console_input):
         self._post_out_text(console_input)

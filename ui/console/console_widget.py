@@ -13,7 +13,7 @@ class ConsoleWidget(QWidget):
         super().__init__(parent)
         uic.loadUi(UI_FILE_PATH, self)
         self.console = console
-        self.console.subscribe_out_text(self.write)
+        self.console.out_text_emitter.connect(self.write)
         widget_util.bind_height_to_document(self.console_in_widget)
         self.console_in_widget.common_signals.key_press_signal.connect(self.input_enter_press_event)
         self.console_in_widget.common_signals.key_press_signal.connect(self.input_enter_release_event)
