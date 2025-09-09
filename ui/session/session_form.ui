@@ -6,13 +6,109 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1050</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>User:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox_2">
+     <item>
+      <property name="text">
+       <string>Nick</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chris</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Region:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox">
+	 <item><property name="text"><string>todo: populate from api call</string></property></item>
+	 <item><property name="text"><string>us-east-1</string></property></item>
+	 <item><property name="text"><string>us-east-2</string></property></item>
+	 <item><property name="text"><string>us-west-1</string></property></item>
+	 <item><property name="text"><string>us-west-2</string></property></item>
+	 <item><property name="text"><string>af-south-1</string></property></item>
+	 <item><property name="text"><string>ap-east-1</string></property></item>
+	 <item><property name="text"><string>ap-south-2</string></property></item>
+	 <item><property name="text"><string>ap-southeast-3</string></property></item>
+	 <item><property name="text"><string>ap-southeast-5</string></property></item>
+	 <item><property name="text"><string>ap-southeast-4</string></property></item>
+	 <item><property name="text"><string>ap-south-1</string></property></item>
+	 <item><property name="text"><string>ap-southeast-6</string></property></item>
+	 <item><property name="text"><string>ap-northeast-3</string></property></item>
+	 <item><property name="text"><string>ap-northeast-2</string></property></item>
+	 <item><property name="text"><string>ap-southeast-1</string></property></item>
+	 <item><property name="text"><string>ap-southeast-2</string></property></item>
+	 <item><property name="text"><string>ap-east-2</string></property></item>
+	 <item><property name="text"><string>ap-southeast-7</string></property></item>
+	 <item><property name="text"><string>ap-northeast-1</string></property></item>
+	 <item><property name="text"><string>ca-central-1</string></property></item>
+	 <item><property name="text"><string>ca-west-1</string></property></item>
+	 <item><property name="text"><string>eu-central-1</string></property></item>
+	 <item><property name="text"><string>eu-west-1</string></property></item>
+	 <item><property name="text"><string>eu-west-2</string></property></item>
+	 <item><property name="text"><string>eu-south-1</string></property></item>
+	 <item><property name="text"><string>eu-west-3</string></property></item>
+	 <item><property name="text"><string>eu-south-2</string></property></item>
+	 <item><property name="text"><string>eu-north-1</string></property></item>
+	 <item><property name="text"><string>eu-central-2</string></property></item>
+	 <item><property name="text"><string>il-central-1</string></property></item>
+	 <item><property name="text"><string>mx-central-1</string></property></item>
+	 <item><property name="text"><string>me-south-1</string></property></item>
+	 <item><property name="text"><string>me-central-1</string></property></item>
+	 <item><property name="text"><string>sa-east-1</string></property></item>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>677</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Auth Token:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="auth_token_label">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
