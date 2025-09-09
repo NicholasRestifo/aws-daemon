@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout
 from model.console import Console
 from ui.console.console_widget import ConsoleWidget
 from ui.services.service_tab_widget import ServiceTabWidget
-from ui.session_widget import SessionWidget
+from ui.session.session_widget import SessionWidget
 
 
 class MainWindow(QMainWindow):

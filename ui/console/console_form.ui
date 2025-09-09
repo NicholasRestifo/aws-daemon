@@ -22,15 +22,15 @@
     </widget>
    </item>
    <item>
-    <widget class="ConsoleInputWidget" name="console_in_widget"/>
+    <widget class="SignalTextEdit" name="console_in_widget"/>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ConsoleInputWidget</class>
+   <class>SignalTextEdit</class>
    <extends>QTextEdit</extends>
-   <header>ui.console.console_input_widget</header>
+   <header>ui.smart_signals.signal_text_edit</header>
   </customwidget>
  </customwidgets>
  <resources/>

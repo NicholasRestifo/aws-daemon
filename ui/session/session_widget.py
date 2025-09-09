@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QWidget
 
 from model.session_info import SessionInfo
 
-UI_FILE_PATH = "ui/session_form.ui"
+UI_FILE_PATH = "ui/session/session_form.ui"
 
 
 class SessionWidget(QWidget):
