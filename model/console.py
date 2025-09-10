@@ -1,4 +1,5 @@
 import subprocess
+import threading
 
 from model.notification.emitter import Emitter
 
@@ -12,7 +13,8 @@ class Console:
 
     def handle_console_input(self, console_input):
         self._post_out_text(console_input)
-        self._run_process(console_input)
+        thread_instance = threading.Thread(target=lambda: self._run_process(console_input), args=())
+        thread_instance.start()
 
     def _run_process(self, console_input):
         completed_process = subprocess.run(
